@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>preview</LangVersion>
+    <Authors>MikiraSora</Authors>
+    <Version>4.5.9</Version>
   </PropertyGroup>
 
 </Project>
