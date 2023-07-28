@@ -78,6 +78,18 @@ namespace MigratableSerializer
             return await parser.ParseAsync(buffer);
         }
 
+        public bool IsMigratable(Type from, Type to, bool isUpgrade)
+        {
+            try
+            {
+                return GetMigrationChain(from, to, isUpgrade).Any();
+            }
+            catch 
+            {
+                return false;
+            }
+        }
+
         public async Task<object> Load(byte[] buffer, Type targetType)
         {
             var initObj = await TryParseAsync(buffer);
